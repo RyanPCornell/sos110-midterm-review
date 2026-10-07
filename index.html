@@ -1060,21 +1060,42 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
 .mt-info .mt-abcd span.on{background:#3b3222; border-color:#3b3222;}
 .mt-info .mt-cover span:not(.mt-ck){background:#fffdf6; border-color:#d9c9a3; font-weight:600;}
 @media (max-width:720px){ .mt-info .mt-fact + .mt-fact{border-top-color:#e6dcc4;} }
+
+
+.slide.mt-title{background:radial-gradient(120% 90% at 50% 0%,#f8f1e1 0%,#f3ecdc 55%,#ebe1cb 100%);}
+.mt-troot{position:absolute; inset:0; display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); align-items:center;
+  gap:clamp(1.6rem,4vw,3.6rem); padding:clamp(2.4rem,7vh,4.4rem) clamp(3.6rem,6vw,5.6rem) clamp(3.6rem,9vh,5rem);}
+.mt-tcopy .eyebrow{color:#8a6a2f; margin:0;}
+.mt-tdisp{margin:.35em 0 0; font-family:'Merriweather',Georgia,serif; font-style:italic; font-weight:700; color:#3b3222;
+  font-size:clamp(3rem,8.4vw,6.4rem); line-height:.98; letter-spacing:-.02em;}
+.mt-trule{width:clamp(70px,9vw,120px); height:3px; background:#3b3222; margin:clamp(1rem,3vh,1.6rem) 0 clamp(.7rem,2vh,1rem);}
+.mt-tsub{font-family:'Merriweather',Georgia,serif; font-style:italic; color:#5e5340; font-size:clamp(1.15rem,2.4vw,1.7rem);}
+.mt-tplate{margin:0; justify-self:end; width:100%; max-width:760px; padding:9px; background:#fbf5e6; border:1px solid #8a6a2f;
+  border-radius:18px; box-shadow:0 0 0 1px #fbf5e6 inset, 0 26px 60px rgba(30,20,8,.24); transform:rotate(.6deg);}
+.mt-tplate img{display:block; width:100%; height:auto; max-height:calc(100vh - 12rem); object-fit:cover; aspect-ratio:1512/1024;
+  border:1px solid #d9c9a3; border-radius:11px;}
+.mt-title .footer{color:#8a7d60;}
+@media (max-width:720px){
+  .mt-troot{position:relative; inset:auto; min-height:100%; grid-template-columns:1fr; padding:2.4rem 16px 4rem; gap:1.4rem;}
+  .mt-tplate{justify-self:stretch; transform:none;}
+}
 </style>
 </head>
 <body>
 <div class="topbar"><div class="progress" id="progress"></div></div>
 
 <div class="deck" id="deck">
-<section class="slide title-slide" data-type="title">
-  <img loading="lazy" decoding="async" class="bleed" data-src="media/image1.jpg" alt="">
-  <div class="title-scrim"></div>
-  <div class="title-content">
-    <div class="chapter-kicker">SOS 110 · Modules 1–3</div>
-    <h1 class="mega">Midterm Review</h1>
-    <div class="title-sub">Chapters 1–8</div>
+<section class="slide mt-title" data-type="title" style="--accent:#8a6a2f">
+  <div class="mt-troot">
+    <div class="mt-tcopy">
+      <span class="eyebrow">SOS 110 · Modules 1–3</span>
+      <h1 class="mt-tdisp">Midterm<br>Review</h1>
+      <div class="mt-trule"></div>
+      <div class="mt-tsub">Chapters 1–8</div>
+    </div>
+    <figure class="mt-tplate"><img data-src="media/image1.jpg" alt="Salmon leaping up a waterfall"></figure>
   </div>
-  <div class="footer light">© 2023 W. W. Norton &amp; Company, Inc.</div>
+  <div class="footer">© 2023 W. W. Norton &amp; Company, Inc.</div>
 </section>
 <section class="slide mt-info" data-type="content" style="--accent:#8a6a2f">
   <div class="mt-root">
