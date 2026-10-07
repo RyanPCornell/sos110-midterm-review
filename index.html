@@ -2196,7 +2196,7 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
   // Flash Memory: three patterns light up on a 4x4 grid, one at a time, and the
   // student taps them back. Everyone who plays gets the point; the top 10% (most
   // squares remembered, ties broken by speed) earn the bonus, like the other breaks.
-  var FM_N=25, FM_ROUNDS=[3,4,5], FM_SHOW=[1900,2200,2600], FM_TOTAL=12, fmTimer=null;
+  var FM_N=25, FM_ROUNDS=[3,4,5], FM_SHOW=[1000,1200,1400], FM_TOTAL=12, fmTimer=null;
   function fmState(){
     var pos=state.idx, gm=gameAt(pos);
     if(HOST || phase()!=='question' || !gm || gm.type!=='f') return null;
