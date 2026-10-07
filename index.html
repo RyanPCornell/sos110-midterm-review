@@ -1063,21 +1063,29 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
 
 
 .slide.mt-title{background:radial-gradient(120% 90% at 50% 0%,#f8f1e1 0%,#f3ecdc 55%,#ebe1cb 100%);}
-.mt-troot{position:absolute; inset:0; display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); align-items:center;
+.mt-troot{position:absolute; inset:0; display:grid; grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr); align-items:center;
   gap:clamp(1.6rem,4vw,3.6rem); padding:clamp(2.4rem,7vh,4.4rem) clamp(3.6rem,6vw,5.6rem) clamp(3.6rem,9vh,5rem);}
 .mt-tcopy .eyebrow{color:#8a6a2f; margin:0;}
 .mt-tdisp{margin:.35em 0 0; font-family:'Merriweather',Georgia,serif; font-style:italic; font-weight:700; color:#3b3222;
   font-size:clamp(3rem,8.4vw,6.4rem); line-height:.98; letter-spacing:-.02em;}
 .mt-trule{width:clamp(70px,9vw,120px); height:3px; background:#3b3222; margin:clamp(1rem,3vh,1.6rem) 0 clamp(.7rem,2vh,1rem);}
 .mt-tsub{font-family:'Merriweather',Georgia,serif; font-style:italic; color:#5e5340; font-size:clamp(1.15rem,2.4vw,1.7rem);}
-.mt-tplate{margin:0; justify-self:end; width:100%; max-width:760px; padding:9px; background:#fbf5e6; border:1px solid #8a6a2f;
-  border-radius:18px; box-shadow:0 0 0 1px #fbf5e6 inset, 0 26px 60px rgba(30,20,8,.24); transform:rotate(.6deg);}
-.mt-tplate img{display:block; width:100%; height:auto; max-height:calc(100vh - 12rem); object-fit:cover; aspect-ratio:1512/1024;
-  border:1px solid #d9c9a3; border-radius:11px;}
+/* the collage: eight small matted prints, slightly askew, one per chapter */
+.mt-collage{justify-self:end; width:100%; max-width:980px; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); align-items:start;
+  gap:clamp(8px,1.2vw,16px); padding:clamp(10px,1.4vw,18px); background:#fbf5e6; border:1px solid #8a6a2f; border-radius:18px;
+  box-shadow:inset 0 0 0 6px #fbf5e6, inset 0 0 0 7px #d9c9a3, 0 26px 60px rgba(30,20,8,.24);}
+.mt-ctile{margin:0; position:relative; padding:5px 5px 0; background:#fffdf6; border:1px solid #d9c9a3; border-radius:8px;
+  box-shadow:0 6px 14px rgba(30,20,8,.16); transform:rotate(var(--r,0deg));}
+.mt-ctile:nth-child(1){--r:-1.4deg} .mt-ctile:nth-child(2){--r:.9deg} .mt-ctile:nth-child(3){--r:-.6deg} .mt-ctile:nth-child(4){--r:1.3deg}
+.mt-ctile:nth-child(5){--r:1.1deg} .mt-ctile:nth-child(6){--r:-1.2deg} .mt-ctile:nth-child(7){--r:.7deg} .mt-ctile:nth-child(8){--r:-.9deg}
+.mt-ctile img{display:block; width:100%; aspect-ratio:4/3; height:auto; object-fit:cover; border-radius:4px;}
+.mt-ctile figcaption{display:flex; align-items:baseline; gap:.35rem; padding:.35rem .15rem .4rem; font:600 clamp(.6rem,.95vw,.86rem)/1.15 Inter,sans-serif;
+  color:#5e5340; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.mt-ctile figcaption b{font:italic 700 1.15em Merriweather,Georgia,serif; color:#3b3222;}
 .mt-title .footer{color:#8a7d60;}
 @media (max-width:720px){
   .mt-troot{position:relative; inset:auto; min-height:100%; grid-template-columns:1fr; padding:2.4rem 16px 4rem; gap:1.4rem;}
-  .mt-tplate{justify-self:stretch; transform:none;}
+  .mt-collage{justify-self:stretch; grid-template-columns:repeat(2,minmax(0,1fr));}
 }
 </style>
 </head>
@@ -1093,7 +1101,7 @@ img.bleed{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
       <div class="mt-trule"></div>
       <div class="mt-tsub">Chapters 1–8</div>
     </div>
-    <figure class="mt-tplate"><img data-src="media/image1.jpg" alt="Salmon leaping up a waterfall"></figure>
+    <div class="mt-collage" role="img" aria-label="Photos from Chapters 1 to 8"><figure class="mt-ctile t1"><img data-src="media/collage-ch1.jpg" alt="A diver over a bleached coral reef"><figcaption><b>1</b>Sustainability</figcaption></figure><figure class="mt-ctile t2"><img data-src="media/collage-ch2.jpg" alt="Workers sorting a mountain of electronic waste"><figcaption><b>2</b>Ethics &amp; Policy</figcaption></figure><figure class="mt-ctile t3"><img data-src="media/collage-ch3.jpg" alt="Smoke rising from a burned peat forest"><figcaption><b>3</b>Matter &amp; Energy</figcaption></figure><figure class="mt-ctile t4"><img data-src="media/collage-ch4.jpg" alt="An ant tending larvae"><figcaption><b>4</b>Life</figcaption></figure><figure class="mt-ctile t5"><img data-src="media/collage-ch5.jpg" alt="Salmon leaping up a waterfall"><figcaption><b>5</b>Conservation</figcaption></figure><figure class="mt-ctile t6"><img data-src="media/collage-ch6.jpg" alt="Dozens of crawling babies"><figcaption><b>6</b>Population</figcaption></figure><figure class="mt-ctile t7"><img data-src="media/collage-ch7.jpg" alt="Meltwater running between glacier walls"><figcaption><b>7</b>Water</figcaption></figure><figure class="mt-ctile t8"><img data-src="media/collage-ch8.jpg" alt="A town street lost in thick smog"><figcaption><b>8</b>Air</figcaption></figure></div>
   </div>
   <div class="footer">© 2023 W. W. Norton &amp; Company, Inc.</div>
 </section>
